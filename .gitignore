@@ -1,0 +1,22 @@
+# Virtual envs
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# System files
+.DS_Store
+
+# Credentials
+.env
+
+# Rust & Maturin
+target/
+*.so
+.maturin/
+build/
+
+Cargo.lock
