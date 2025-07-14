@@ -20,3 +20,5 @@ target/
 build/
 
 Cargo.lock
+
+node_modules
