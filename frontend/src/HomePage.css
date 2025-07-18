@@ -1,43 +1,478 @@
-.homepage {
-  padding: 2rem;
-  font-family: sans-serif;
-  background-color: #f9f9f9;
-}
-
-.product-section {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.product-section h2 {
-  margin-bottom: 1rem;
+/* Base styles */
+.app-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
   color: #333;
+  background-color: #f5f7fa;
+  min-height: 100vh;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  font-size: 2.5rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Post styles */
 .post {
+  margin-bottom: 2rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.body {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  color: #4a5568;
   margin-bottom: 1rem;
-  padding: 0.75rem;
-  background-color: #f1f1f1;
-  border-radius: 6px;
 }
 
-.post h3 {
+.link {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.comments-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.comments-section h4 {
+  margin-bottom: 0.75rem;
+  color: #4a5568;
+}
+
+.comments-section ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.comments-section li {
   margin-bottom: 0.5rem;
-  color: #0077cc;
-}
-
-.post p {
-  margin-bottom: 0.5rem;
-}
-
-.post ul {
+  line-height: 1.6;
+  color: #4a5568;
+  position: relative;
   padding-left: 1.25rem;
 }
 
-.post li {
-  margin-bottom: 0.25rem;
-  color: #444;
+.comments-section li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #a0aec0;
+}
+
+/* Megathread styles */
+.megathreads-section {
+  margin-top: 4rem;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  font-size: 1.75rem;
+}
+
+.section-description {
+  color: #718096;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.megathread-section {
+  margin-bottom: 4rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.megathread-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #edf2f7;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.megathread-title {
+  color: #2d3748;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.thread-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.stat.high {
+  background-color: #ebf8f2;
+  color: #2f855a;
+}
+
+.stat.low {
+  background-color: #fffaf0;
+  color: #975a16;
+}
+
+.source-link {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+}
+
+.source-link:hover {
+  color: #3182ce;
+  text-decoration: underline;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.product-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.product-card.high-confidence {
+  border-left: 4px solid #48bb78;
+  background-color: #f8fff8;
+}
+
+.product-card.low-confidence {
+  border-left: 4px solid #ecc94b;
+  background-color: #fffcf5;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.product-name {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  flex: 1;
+  padding-right: 0.5rem;
+}
+
+.confidence-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.high-confidence .confidence-badge {
+  background-color: #e6fffa;
+  color: #2c7a7b;
+  border: 1px solid #b2f5ea;
+}
+
+.low-confidence .confidence-badge {
+  background-color: #fffaf0;
+  color: #975a16;
+  border: 1px solid #feebc8;
+}
+
+.product-details {
+  font-size: 0.95rem;
+  color: #4a5568;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product-details p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.product-details strong {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.effects {
+  background-color: #f8fafc;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  border-left: 3px solid #e2e8f0;
+}
+
+.effects p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9em;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.comment-meta {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #edf2f7;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.comment-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.comment-link {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.comment-link:hover {
+  color: #3182ce;
+  text-decoration: underline;
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+.comment-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.comment-author {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.comment-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #718096;
+}
+
+.comment-score .icon {
+  color: #e53e3e;
+  font-size: 0.9em;
+}
+
+/* Loading and error states */
+.loading, .error-message, .no-data {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px dashed #e2e8f0;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid #e2e8f0;
+  border-radius: 50%;
+  border-top-color: #4a90e2;
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border-color: #fed7d7;
+}
+
+.no-data {
+  color: #718096;
+  background-color: #f8fafc;
+}
+
+.product-details p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.effects {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  border-left: 3px solid #e2e8f0;
+}
+
+.effects p {
+  margin: 0.5rem 0 0 0;
+  color: #4a5568;
+  font-style: italic;
+}
+
+.comment-meta {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #718096;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 0.75rem;
+}
+
+.comment-meta a {
+  color: #4a90e2;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.comment-meta a:hover {
+  text-decoration: underline;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 1rem;
+  }
 }

@@ -1,5 +1,5 @@
 Run:
 cd scraper
-python scraper.py
+python scraper_megathread.py
 cd ../frontend
 npm start
