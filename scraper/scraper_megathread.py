@@ -6,6 +6,10 @@ import os
 import difflib
 import string
 from typing import List, Dict, Optional, Tuple, NamedTuple
+import re
+from datetime import datetime
+import json
+from urllib.parse import urlparse
 
 # Initialize Reddit instance
 reddit = praw.Reddit(
@@ -15,6 +19,47 @@ reddit = praw.Reddit(
     user_agent="script:megathread_scraper:v1.0",
     username="Successful_Body674",
 )
+
+def is_spam_comment(comment_body: str) -> bool:
+    """
+    Check if a comment is likely spam based on simple heuristics.
+    
+    Args:
+        comment_body: The text content of the comment
+        
+    Returns:
+        bool: True if the comment is likely spam, False otherwise
+    """
+    if not comment_body:
+        return False
+        
+    # Normalize whitespace and convert to lowercase
+    normalized = ' '.join(comment_body.lower().split())
+    
+    # Check for URL patterns
+    url_pattern = r'https?://\S+'
+    urls = re.findall(url_pattern, normalized)
+    
+    # If there's a URL and the comment is very short, it's likely spam
+    if urls and len(normalized) < 50:
+        return True
+        
+    # Check for common spam phrases
+    spam_phrases = [
+        'click here',
+        'buy now',
+        'promo code',
+        'limited time',
+        'affiliate',
+        'shop now'
+    ]
+    
+    if any(phrase in normalized for phrase in spam_phrases):
+        # If the comment is very short or mostly just the spam phrase
+        if len(normalized) < 100 or len(normalized.split()) < 10:
+            return True
+            
+    return False
 
 def parse_skin_type(text: str) -> List[str]:
     """Parse skin type from text, handling various separators."""
@@ -59,6 +104,7 @@ def extract_product_info(comment_body: str) -> Optional[Dict]:
         'price_size': None,
         'effects': None,
         'status': None,
+        'availability': None,
         'comment': '\n'.join(lines)
     }
     
@@ -92,24 +138,38 @@ def extract_product_info(comment_body: str) -> Optional[Dict]:
             current_field = 'skin_type'
             skin_type = line.split(':', 1)[1].strip()
             product_info['skin_type'] = parse_skin_type(skin_type)
-        elif 'price' in line_lower and 'size' in line_lower and ':' in line:
+        elif 'price' in line_lower and ':' in line:
             current_field = 'price_size'
             product_info['price_size'] = line.split(':', 1)[1].strip()
-        elif ('effect' in line_lower or 'experience' in line_lower) and ':' in line:
+        elif any(effect_key in line_lower for effect_key in ['effect', 'experience', 'exp']) and ':' in line:
             current_field = 'effects'
             product_info['effects'] = line.split(':', 1)[1].strip()
         elif 'status' in line_lower and ':' in line:
             current_field = 'status'
             status = line.split(':', 1)[1].strip().upper()
-            if 'HG' in status:
-                product_info['status'] = 'HG'
-            elif 'WR' in status:
-                product_info['status'] = 'WR'
-            elif 'WNR' in status:
-                product_info['status'] = 'WNR'
+            status = status.upper()
+            if 'HG' in status or 'HOLY GRAIL' in status:
+                product_info['status'] = 'HG (Holy Grail)'
+            elif 'WR' in status or 'WILL REPURCHASE' in status:
+                # Extract any additional text in parentheses for WR status
+                additional_text = ''
+                if '(' in status and ')' in status:
+                    additional_text = ' ' + status[status.find('('):status.rfind(')')+1]
+                product_info['status'] = f'WR (Will Repurchase{additional_text})'
+            elif 'WNR' in status or 'WILL NOT REPURCHASE' in status or 'WON\'T REPURCHASE' in status:
+                product_info['status'] = 'WNR (Will Not Repurchase)'
+        elif 'where to buy' in line_lower and ':' in line:
+            current_field = 'availability'
+            product_info['availability'] = line.split(':', 1)[1].strip()
         elif current_field == 'effects':
             # Append to effects if we're in the middle of reading a multi-line effects section
             product_info['effects'] = (product_info['effects'] + ' ' + line).strip()
+        elif current_field == 'availability':
+            # Append to availability if we're in the middle of reading a multi-line availability section
+            if product_info['availability'] is None:
+                product_info['availability'] = line.strip()
+            else:
+                product_info['availability'] = (product_info['availability'] + ' ' + line).strip()
     
     return product_info
 
@@ -223,10 +283,16 @@ def scrape_megathread(submission_url: str, limit: int = None, products_file: str
         }
         
         for comment in submission.comments.list():
-            if not comment.body or comment.body == '[deleted]' or comment.body == '[removed]':
+            comment_body = comment.body
+            if not comment_body or comment_body == '[deleted]' or comment_body == '[removed]':
                 continue
                 
-            product_info = extract_product_info(comment.body)
+            # Skip spam comments
+            if is_spam_comment(comment_body):
+                print(f"Skipping potential spam comment by {comment.author}: {comment_body[:50]}...")
+                continue
+                
+            product_info = extract_product_info(comment_body)
             if not product_info or not product_info['product_name']:
                 continue
                 
@@ -274,8 +340,8 @@ def save_products_to_csv(products: List[Dict], filename: str, match_type: str = 
     
     fieldnames = [
         'matched_product', 'match_confidence', 'product_name', 'skin_type', 
-        'price_size', 'effects', 'status', 'comment_id', 'comment_score', 
-        'comment_created_utc', 'comment_author', 'comment'
+        'price_size', 'effects', 'status', 'availability', 'comment_id', 
+        'comment_score', 'comment_created_utc', 'comment_author', 'comment'
     ]
     
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
@@ -370,12 +436,66 @@ def save_to_json(products_data: Dict[str, List[Dict]], base_filename: str):
     
     return len(high_confidence), len(low_confidence), filenames
 
+def group_products_by_name(products: List[Dict]) -> Dict[str, Dict]:
+    """
+    Group a list of product dictionaries by their matched_product field.
+    
+    Args:
+        products: List of product dictionaries to group
+        
+    Returns:
+        Dictionary with product names as keys and product data as values, where each value is a dict containing:
+        - product_name: The name of the product
+        - comments_count: Total number of comments/reviews
+        - megathread_comments: List of comments/reviews for this product
+    """
+    grouped_products = {}
+    
+    for product in products:
+        # Use the matched_product as the key, or product_name if matched_product is not available
+        key = product.get('matched_product', product.get('product_name', 'Unknown'))
+        
+        # Clean up the key by removing any trailing whitespace
+        key = key.strip()
+        
+        # Initialize the product entry if it doesn't exist
+        if key not in grouped_products:
+            grouped_products[key] = {
+                'product_name': key,
+                'comments_count': 0,
+                'megathread_comments': []
+            }
+        
+        # Add the comment to the product's megathread_comments
+        comment_data = {
+            'comment_id': product.get('comment_id'),
+            'comment_author': product.get('comment_author'),
+            'comment_score': product.get('comment_score'),
+            'comment_created_utc': product.get('comment_created_utc'),
+            'comment': product.get('comment'),
+            'skin_type': product.get('skin_type'),
+            'price_size': product.get('price_size'),
+            'effects': product.get('effects'),
+            'status': product.get('status'),
+            'availability': product.get('availability'),
+            'match_confidence': product.get('match_confidence')
+        }
+        
+        # Add the comment to the product's megathread_comments
+        grouped_products[key]['megathread_comments'].append(comment_data)
+        
+        # Increment the comments count
+        grouped_products[key]['comments_count'] += 1
+    
+    return grouped_products
+
 def combine_megathread_data():
     """
-    Combine all individual megathread JSON files into combined files.
+    Combine all individual megathread JSON files into grouped files
+    where products are organized by matched_product.
     
     Returns:
-        Tuple of (combined_high, combined_low) counts
+        Tuple of (high_count, low_count) containing the number of products processed
     """
     output_dir = '../frontend/public/scrapes'
     combined_high = []
@@ -385,14 +505,15 @@ def combine_megathread_data():
     high_files = glob.glob(f"{output_dir}/*_high_confidence.json")
     low_files = glob.glob(f"{output_dir}/*_low_confidence.json")
     
-    # Skip the combined files if they exist
-    combined_high_path = f"{output_dir}/products_all_high_confidence.json"
-    combined_low_path = f"{output_dir}/products_all_low_confidence.json"
+    # Define grouped output file paths
+    grouped_high_path = f"{output_dir}/products_grouped_high_confidence.json"
+    grouped_low_path = f"{output_dir}/products_grouped_low_confidence.json"
     
-    high_files = [f for f in high_files if not f.endswith('_all_high_confidence.json')]
-    low_files = [f for f in low_files if not f.endswith('_all_low_confidence.json')]
+    # Remove grouped files from the file lists to avoid reading them
+    high_files = [f for f in high_files if f != grouped_high_path and f.replace('\\', '/') != grouped_high_path]
+    low_files = [f for f in low_files if f != grouped_low_path and f.replace('\\', '/') != grouped_low_path]
     
-    # Load and combine high confidence files
+    # Process high confidence files
     for filepath in high_files:
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
@@ -402,7 +523,7 @@ def combine_megathread_data():
         except (json.JSONDecodeError, FileNotFoundError) as e:
             print(f"Error reading {filepath}: {e}")
     
-    # Load and combine low confidence files
+    # Process low confidence files
     for filepath in low_files:
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
@@ -412,14 +533,17 @@ def combine_megathread_data():
         except (json.JSONDecodeError, FileNotFoundError) as e:
             print(f"Error reading {filepath}: {e}")
     
-    # Save combined files
+    # Save grouped high confidence products
     if combined_high:
-        with open(combined_high_path, 'w', encoding='utf-8') as f:
-            json.dump(combined_high, f, ensure_ascii=False, indent=2)
+        grouped_high = group_products_by_name(combined_high)
+        with open(grouped_high_path, 'w', encoding='utf-8') as f:
+            json.dump(grouped_high, f, ensure_ascii=False, indent=2)
     
+    # Save grouped low confidence products
     if combined_low:
-        with open(combined_low_path, 'w', encoding='utf-8') as f:
-            json.dump(combined_low, f, ensure_ascii=False, indent=2)
+        grouped_low = group_products_by_name(combined_low)
+        with open(grouped_low_path, 'w', encoding='utf-8') as f:
+            json.dump(grouped_low, f, ensure_ascii=False, indent=2)
     
     return len(combined_high), len(combined_low)
 
@@ -476,8 +600,7 @@ if __name__ == "__main__":
         "https://www.reddit.com/r/beautytalkph/comments/17ss0yq/product_megathread_facial_wash_cleansers_first/",
         "https://www.reddit.com/r/beautytalkph/comments/1kkm5g8/sunscreen_megathread_2025/",
         "https://www.reddit.com/r/beautytalkph/comments/119p88g/product_megathread_sunscreens_2023/",
-        "https://www.reddit.com/r/beautytalkph/comments/1biv527/product_megathread_sunscreens_2024/",
-        "https://www.reddit.com/r/beautytalkph/comments/1kkm5g8/sunscreen_megathread_2025/"
+        "https://www.reddit.com/r/beautytalkph/comments/1biv527/product_megathread_sunscreens_2024/"
 
     ]
     

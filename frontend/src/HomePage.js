@@ -3,7 +3,7 @@ import "./HomePage.css";
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
-  const [megathreadData, setMegathreadData] = useState({});
+  const [megathreadData, setMegathreadData] = useState({ high_confidence: {}, low_confidence: {} });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -18,33 +18,27 @@ function HomePage() {
         const postsData = await postsResponse.json();
         setPosts(postsData.slice(0, 5)); // Show only first 5 posts
         
-        // Try to load combined megathread data
-        const megathreadPaths = [
-          "/scrapes/products_all_high_confidence.json",
-          "/scrapes/products_all_low_confidence.json"
-        ];
-        
+        // Try to load grouped megathread data
         try {
-          // Load both high and low confidence combined files
           const [highRes, lowRes] = await Promise.all([
-            fetch(megathreadPaths[0]),
-            fetch(megathreadPaths[1])
+            fetch("/scrapes/products_grouped_high_confidence.json"),
+            fetch("/scrapes/products_grouped_low_confidence.json")
           ]);
           
-          // Check if we got at least one valid response
-          if (highRes.ok || lowRes.ok) {
-            const highData = highRes.ok ? await highRes.json() : [];
-            const lowData = lowRes.ok ? await lowRes.json() : [];
-            
-            // Format the data for the component
-            const combinedData = {
-              'all_megathreads': {
-                high_confidence: Array.isArray(highData) ? highData : [],
-                low_confidence: Array.isArray(lowData) ? lowData : []
-              }
-            };
-            
-            setMegathreadData(combinedData);
+          // Process the responses
+          const highData = highRes.ok ? await highRes.json() : {};
+          const lowData = lowRes.ok ? await lowRes.json() : {};
+          
+          // Calculate total counts
+          const highCount = Object.values(highData).reduce((sum, product) => sum + (product.comments_count || 0), 0);
+          const lowCount = Object.values(lowData).reduce((sum, product) => sum + (product.comments_count || 0), 0);
+          
+          // Only set data if we have something
+          if (highCount > 0 || lowCount > 0) {
+            setMegathreadData({
+              high_confidence: highData,
+              low_confidence: lowData
+            });
             return;
           }
         } catch (e) {
@@ -95,78 +89,61 @@ function HomePage() {
       return <div className="error-message">{error}</div>;
     }
     
-    const threadUrls = Object.keys(megathreadData);
-    if (threadUrls.length === 0) {
+    const { high_confidence: highData = {}, low_confidence: lowData = {} } = megathreadData;
+    const hasHighConfidence = Object.keys(highData).length > 0;
+    const hasLowConfidence = Object.keys(lowData).length > 0;
+    
+    if (!hasHighConfidence && !hasLowConfidence) {
       return <div className="no-data">No megathread data available. Please run the scraper first.</div>;
     }
 
-    return threadUrls.map((url, idx) => {
-      const thread = megathreadData[url];
-      const highConfidence = thread.high_confidence || [];
-      const lowConfidence = thread.low_confidence || [];
-      const allProducts = [...highConfidence, ...lowConfidence];
-      
-      // Extract thread title from URL or use a default
-      const threadTitle = url.split('/').filter(Boolean).pop().replace(/_/g, ' ') || 'Megathread';
-
-      return (
-        <div key={idx} className="megathread-section">
-          <div className="megathread-header">
-            <h2 className="megathread-title">{threadTitle}</h2>
-            <div className="thread-stats">
-              {highConfidence.length > 0 && (
-                <span className="stat high">{highConfidence.length} high confidence</span>
-              )}
-              {lowConfidence.length > 0 && (
-                <span className="stat low">{lowConfidence.length} possible matches</span>
-              )}
-              <a href={url} target="_blank" rel="noreferrer" className="source-link">
-                View thread ↗
-              </a>
+    const renderProductCards = (products, isHighConfidence = true) => {
+      return Object.entries(products).map(([productName, productData]) => {
+        const { comments_count, megathread_comments = [] } = productData;
+        
+        return (
+          <div key={productName} className="product-card">
+            <div className="product-header">
+              <h3 className="product-name">{productName}</h3>
+              <span className="comments-count">{comments_count} {comments_count === 1 ? 'comment' : 'comments'}</span>
             </div>
-          </div>
-          
-          {allProducts.length === 0 ? (
-            <p>No matching products found in this thread.</p>
-          ) : (
-            <div className="products-container">
-              {allProducts.map((product, pIdx) => (
-                <div key={`${idx}-${pIdx}`} className={`product-card ${product.match_confidence >= 0.85 ? 'high-confidence' : 'low-confidence'}`}>
-                  <div className="product-header">
-                    <h3 className="product-name">{product.matched_product || product.product_name}</h3>
-                    <span className="confidence-badge">
-                      {product.match_confidence >= 0.85 ? '✓' : '~'} {(product.match_confidence * 100).toFixed(0)}%
-                    </span>
-                  </div>
-                  
-                  <div className="product-details">
-                    {product.skin_type && product.skin_type.length > 0 && (
-                      <p><strong>Skin Type:</strong> {Array.isArray(product.skin_type) ? product.skin_type.join(', ') : product.skin_type}</p>
-                    )}
-                    {product.price_size && <p><strong>Price/Size:</strong> {product.price_size}</p>}
-                    {product.status && <p><strong>Status:</strong> {product.status}</p>}
-                    {product.effects && (
-                      <div className="effects">
+            
+            <div className="comments-container">
+              {megathread_comments.map((comment, idx) => (
+                <div key={idx} className={`comment ${isHighConfidence ? 'high-confidence' : 'low-confidence'}`}>
+                  <div className="comment-content">
+                    {comment.effects && (
+                      <div className="comment-effects">
                         <strong>Experience:</strong>
-                        <p>{product.effects}</p>
+                        <p>{comment.effects}</p>
                       </div>
                     )}
+                    
+                    <div className="comment-details">
+                      {comment.skin_type && comment.skin_type.length > 0 && (
+                        <p><strong>Skin Type:</strong> {Array.isArray(comment.skin_type) ? comment.skin_type.join(', ') : comment.skin_type}</p>
+                      )}
+                      {comment.price_size && <p><strong>Price/Size:</strong> {comment.price_size}</p>}
+                      {comment.status && <p><strong>Status:</strong> {comment.status}</p>}
+                      {comment.availability && <p><strong>Where to buy:</strong> {comment.availability}</p>}
+                    </div>
+                    
                     <div className="comment-meta">
                       <div className="comment-actions">
-                        <a href={`https://reddit.com${product.comment_id}`} target="_blank" rel="noreferrer" className="comment-link">
+                        <a href={`https://reddit.com${comment.comment_id}`} target="_blank" rel="noreferrer" className="comment-link">
                           View comment
                         </a>
-                        {product.comment_created_utc && (
-                          <span className="comment-date">{formatDate(product.comment_created_utc)}</span>
+                        {comment.comment_created_utc && (
+                          <span className="comment-date">{formatDate(comment.comment_created_utc)}</span>
                         )}
                       </div>
                       <div className="comment-info">
-                        {product.comment_author && (
-                          <span className="comment-author">u/{product.comment_author}</span>
+                        {comment.comment_author && (
+                          <span className="comment-author">u/{comment.comment_author}</span>
                         )}
-                        {product.comment_score !== undefined && (
+                        {comment.comment_score !== undefined && (
                           <span className="comment-score">
-                            <span className="icon">↑</span> {product.comment_score}
+                            <span className="icon">↑</span> {comment.comment_score}
                           </span>
                         )}
                       </div>
@@ -175,10 +152,38 @@ function HomePage() {
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      );
-    });
+          </div>
+        );
+      });
+    };
+
+    return (
+      <>
+        {hasHighConfidence && (
+          <div className="confidence-section">
+            <h3 className="confidence-header">
+              High Confidence Matches
+              <span className="stat high">{Object.keys(highData).length} products</span>
+            </h3>
+            <div className="products-grid">
+              {renderProductCards(highData, true)}
+            </div>
+          </div>
+        )}
+        
+        {hasLowConfidence && (
+          <div className="confidence-section">
+            <h3 className="confidence-header">
+              Possible Matches
+              <span className="stat low">{Object.keys(lowData).length} products</span>
+            </h3>
+            <div className="products-grid">
+              {renderProductCards(lowData, false)}
+            </div>
+          </div>
+        )}
+      </>
+    );
   };
 
   return (
