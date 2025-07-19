@@ -242,7 +242,7 @@ def find_best_product_match(product_name: str, target_products: List[str]) -> Op
             best_match = target
     
     # Only return matches above a certain threshold
-    if best_ratio >= 0.68:  # Adjust this threshold as needed
+    if best_ratio >= 0.65:  # Adjust this threshold as needed
         return ProductMatch(
             name=best_match,
             confidence=best_ratio,

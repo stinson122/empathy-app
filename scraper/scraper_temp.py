@@ -4,6 +4,8 @@ import csv
 import json
 from collections import defaultdict
 
+# This scrapes from entire reddit, not just r/BeautyTalkPh. Ignore for now.
+
 reddit = praw.Reddit(
     # change this
     client_id="Wt3DQHzvtI4_poBQ58Rn2g",

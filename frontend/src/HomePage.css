@@ -107,8 +107,8 @@
   color: #a0aec0;
 }
 
-/* Megathread styles */
-.megathreads-section {
+/* Product and megathread styles */
+.products-section {
   margin-top: 4rem;
 }
 
@@ -182,13 +182,31 @@
   color: #2d3748;
 }
 
+.counts {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.posts-count,
 .comments-count {
-  font-size: 0.85rem;
-  color: #718096;
+  font-size: 0.8rem;
+  color: #4a5568;
   background: #edf2f7;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.posts-count {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+}
+
+.comments-count {
+  background-color: #f0fff4;
+  color: #2f855a;
 }
 
 .comments-container {
@@ -378,13 +396,36 @@
 }
 
 .product-name {
-  margin: 0;
+  margin: 0 0 0.25rem 0;
   color: #2d3748;
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.4;
   flex: 1;
   padding-right: 0.5rem;
+}
+
+.product-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  margin-bottom: 0.5rem;
+}
+
+.product-card.Sunscreen .product-type {
+  background-color: #e6fffa;
+  color: #2c7a7b;
+  border: 1px solid #b2f5ea;
+}
+
+.product-card.Cleanser .product-type {
+  background-color: #fffaf0;
+  color: #975a16;
+  border: 1px solid #feebc8;
 }
 
 .confidence-badge {
@@ -437,11 +478,16 @@
   border-left: 3px solid #e2e8f0;
 }
 
-.effects p {
-  margin: 0.5rem 0 0 0;
-  font-size: 0.9em;
-  color: #4a5568;
+.post-excerpt,
+.comment-effects p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
   line-height: 1.6;
+  color: #4a5568;
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .comment-meta {

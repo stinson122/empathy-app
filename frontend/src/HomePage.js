@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 
 function HomePage() {
-  const [posts, setPosts] = useState([]);
-  const [megathreadData, setMegathreadData] = useState({ high_confidence: {}, low_confidence: {} });
+  const [combinedData, setCombinedData] = useState({ high_confidence: {}, low_confidence: {} });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -13,44 +12,27 @@ function HomePage() {
         setIsLoading(true);
         setError(null);
         
-        // Load regular posts
-        const postsResponse = await fetch("/scraped.json");
-        const postsData = await postsResponse.json();
-        setPosts(postsData.slice(0, 5)); // Show only first 5 posts
+        // Load combined data for both confidence levels
+        const [highRes, lowRes] = await Promise.all([
+          fetch("/scrapes/combined_data_high_confidence.json"),
+          fetch("/scrapes/combined_data_low_confidence.json")
+        ]);
         
-        // Try to load grouped megathread data
-        try {
-          const [highRes, lowRes] = await Promise.all([
-            fetch("/scrapes/products_grouped_high_confidence.json"),
-            fetch("/scrapes/products_grouped_low_confidence.json")
-          ]);
-          
-          // Process the responses
-          const highData = highRes.ok ? await highRes.json() : {};
-          const lowData = lowRes.ok ? await lowRes.json() : {};
-          
-          // Calculate total counts
-          const highCount = Object.values(highData).reduce((sum, product) => sum + (product.comments_count || 0), 0);
-          const lowCount = Object.values(lowData).reduce((sum, product) => sum + (product.comments_count || 0), 0);
-          
-          // Only set data if we have something
-          if (highCount > 0 || lowCount > 0) {
-            setMegathreadData({
-              high_confidence: highData,
-              low_confidence: lowData
-            });
-            return;
-          }
-        } catch (e) {
-          console.error("Error loading megathread data:", e);
-          throw e; // Re-throw to be caught by the outer try-catch
+        if (!highRes.ok || !lowRes.ok) {
+          throw new Error("Failed to load one or more data files");
         }
         
-        // If we get here, all fetch attempts failed
-        setError("Could not load megathread data. Please run the scraper first.");
+        const highData = await highRes.json();
+        const lowData = await lowRes.json();
+        
+        setCombinedData({
+          high_confidence: highData,
+          low_confidence: lowData
+        });
+        
       } catch (error) {
         console.error("Error loading data:", error);
-        setError("Failed to load data. Please check the console for details.");
+        setError("Failed to load data. Please make sure you've run the scraper first.");
       } finally {
         setIsLoading(false);
       }
@@ -80,7 +62,7 @@ function HomePage() {
       return (
         <div className="loading">
           <div className="spinner"></div>
-          <p>Loading megathread data...</p>
+          <p>Loading product data...</p>
         </div>
       );
     }
@@ -89,69 +71,133 @@ function HomePage() {
       return <div className="error-message">{error}</div>;
     }
     
-    const { high_confidence: highData = {}, low_confidence: lowData = {} } = megathreadData;
+    const { high_confidence: highData = {}, low_confidence: lowData = {} } = combinedData;
     const hasHighConfidence = Object.keys(highData).length > 0;
     const hasLowConfidence = Object.keys(lowData).length > 0;
     
     if (!hasHighConfidence && !hasLowConfidence) {
-      return <div className="no-data">No megathread data available. Please run the scraper first.</div>;
+      return <div className="no-data">No product data available. Please run the scraper first.</div>;
     }
 
     const renderProductCards = (products, isHighConfidence = true) => {
       return Object.entries(products).map(([productName, productData]) => {
-        const { comments_count, megathread_comments = [] } = productData;
+        const { comments_count = 0, posts_count = 0, megathread_comments = [], posts = [] } = productData;
+        const totalItems = comments_count + posts_count;
         
         return (
           <div key={productName} className="product-card">
             <div className="product-header">
-              <h3 className="product-name">{productName}</h3>
-              <span className="comments-count">{comments_count} {comments_count === 1 ? 'comment' : 'comments'}</span>
+              <div>
+                <h3 className="product-name">{productName}</h3>
+                {productData.product_type && (
+                  <span className="product-type">{productData.product_type}</span>
+                )}
+              </div>
+              <div className="counts">
+                {posts_count > 0 && <span className="posts-count">{posts_count} {posts_count === 1 ? 'post' : 'posts'}</span>}
+                {comments_count > 0 && <span className="comments-count">{comments_count} {comments_count === 1 ? 'comment' : 'comments'}</span>}
+              </div>
             </div>
             
-            <div className="comments-container">
-              {megathread_comments.map((comment, idx) => (
-                <div key={idx} className={`comment ${isHighConfidence ? 'high-confidence' : 'low-confidence'}`}>
-                  <div className="comment-content">
-                    {comment.effects && (
-                      <div className="comment-effects">
-                        <strong>Experience:</strong>
-                        <p>{comment.effects}</p>
-                      </div>
-                    )}
-                    
-                    <div className="comment-details">
-                      {comment.skin_type && comment.skin_type.length > 0 && (
-                        <p><strong>Skin Type:</strong> {Array.isArray(comment.skin_type) ? comment.skin_type.join(', ') : comment.skin_type}</p>
+            {/* Render posts */}
+            {posts.length > 0 && (
+              <div className="posts-container">
+                <h4 className="section-title">From Posts</h4>
+                {posts.map((post, idx) => (
+                  <div key={`post-${idx}`} className={`post ${isHighConfidence ? 'high-confidence' : 'low-confidence'}`}>
+                    <div className="post-content">
+                      {post.post_selftext && (
+                        <div className="post-effects">
+                          <strong>Content:</strong>
+                          <div className="post-excerpt">
+                            {post.post_selftext}
+                          </div>
+                        </div>
                       )}
-                      {comment.price_size && <p><strong>Price/Size:</strong> {comment.price_size}</p>}
-                      {comment.status && <p><strong>Status:</strong> {comment.status}</p>}
-                      {comment.availability && <p><strong>Where to buy:</strong> {comment.availability}</p>}
-                    </div>
-                    
-                    <div className="comment-meta">
-                      <div className="comment-actions">
-                        <a href={`https://reddit.com${comment.comment_id}`} target="_blank" rel="noreferrer" className="comment-link">
-                          View comment
-                        </a>
-                        {comment.comment_created_utc && (
-                          <span className="comment-date">{formatDate(comment.comment_created_utc)}</span>
+                      
+                      <div className="post-details">
+                        {post.skin_type && post.skin_type.length > 0 && (
+                          <p><strong>Skin Type:</strong> {Array.isArray(post.skin_type) ? post.skin_type.join(', ') : post.skin_type}</p>
                         )}
+                        {post.price_size && <p><strong>Price/Size:</strong> {post.price_size}</p>}
+                        {post.status && <p><strong>Status:</strong> {post.status}</p>}
+                        {post.availability && <p><strong>Where to buy:</strong> {post.availability}</p>}
                       </div>
-                      <div className="comment-info">
-                        {comment.comment_author && (
-                          <span className="comment-author">u/{comment.comment_author}</span>
-                        )}
-                        {comment.comment_score !== undefined && (
-                          <span className="comment-score">
-                            <span className="icon">↑</span> {comment.comment_score}
-                          </span>
-                        )}
+                      
+                      <div className="post-meta">
+                        <div className="post-actions">
+                          <a href={`https://reddit.com${post.post_id}`} target="_blank" rel="noreferrer" className="post-link">
+                            View post
+                          </a>
+                          {post.post_created_utc && (
+                            <span className="post-date">{formatDate(post.post_created_utc)}</span>
+                          )}
+                        </div>
+                        <div className="post-info">
+                          {post.post_author && (
+                            <span className="post-author">u/{post.post_author}</span>
+                          )}
+                          {post.post_score !== undefined && (
+                            <span className="post-score">
+                              <span className="icon">↑</span> {post.post_score}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Render megathread comments */}
+            {megathread_comments.length > 0 && (
+              <div className="comments-container">
+                <h4 className="section-title">From Megathreads</h4>
+                {megathread_comments.map((comment, idx) => (
+                  <div key={idx} className={`comment ${isHighConfidence ? 'high-confidence' : 'low-confidence'}`}>
+                    <div className="comment-content">
+                      {comment.effects && (
+                        <div className="comment-effects">
+                          <strong>Experience:</strong>
+                          <p>{comment.effects}</p>
+                        </div>
+                      )}
+                      
+                      <div className="comment-details">
+                        {comment.skin_type && comment.skin_type.length > 0 && (
+                          <p><strong>Skin Type:</strong> {Array.isArray(comment.skin_type) ? comment.skin_type.join(', ') : comment.skin_type}</p>
+                        )}
+                        {comment.price_size && <p><strong>Price/Size:</strong> {comment.price_size}</p>}
+                        {comment.status && <p><strong>Status:</strong> {comment.status}</p>}
+                        {comment.availability && <p><strong>Where to buy:</strong> {comment.availability}</p>}
+                      </div>
+                      
+                      <div className="comment-meta">
+                        <div className="comment-actions">
+                          <a href={`https://reddit.com${comment.comment_id}`} target="_blank" rel="noreferrer" className="comment-link">
+                            View comment
+                          </a>
+                          {comment.comment_created_utc && (
+                            <span className="comment-date">{formatDate(comment.comment_created_utc)}</span>
+                          )}
+                        </div>
+                        <div className="comment-info">
+                          {comment.comment_author && (
+                            <span className="comment-author">u/{comment.comment_author}</span>
+                          )}
+                          {comment.comment_score !== undefined && (
+                            <span className="comment-score">
+                              <span className="icon">↑</span> {comment.comment_score}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         );
       });
@@ -190,32 +236,12 @@ function HomePage() {
     <div className="app-container">
       <div className="container">
         <h1 className="header">Reddit Product Reviews</h1>
-        {/*
-        <section className="section">
-          <h2>Recent Posts</h2>
-          {posts.map((post, idx) => (
-            <div key={idx} className="post">
-              <h3 className="title">{post.title}</h3>
-              <p className="body">{post.body}</p>
-              <a href={post.url} target="_blank" rel="noreferrer" className="link">View on Reddit</a>
-              <div className="comments-section">
-                <h4>Comments:</h4>
-                <ul>
-                  {post.comments?.slice(0, 3).map((comment, i) => (
-                    <li key={i}>{comment}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </section>*/
-        }
-
-        <section className="section megathreads-section">
+        
+        <section className="section products-section">
           <div className="section-header">
-            <h2>Megathread Results</h2>
+            <h2>Product Reviews</h2>
             <p className="section-description">
-              Product mentions from beauty community megathreads, matched with confidence scores
+              Product mentions from both individual posts and megathreads, grouped by confidence level
             </p>
           </div>
           {renderMegathreadResults()}

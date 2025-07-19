@@ -1,7 +1,8 @@
 {
   "Cetaphil Gentle Skin Cleanser": {
     "product_name": "Cetaphil Gentle Skin Cleanser",
-    "comments_count": 7,
+    "product_type": "Cleanser",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "l7nsy7v",
@@ -16,7 +17,8 @@
         "effects": "This product has really made a difference for me. It has significantly improved my breakouts and has also helped to fade my pimple marks. I've been using this product for 5 years now and will never switch brands again. 🔛🔝",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.6666666666666666
+        "match_confidence": 0.6666666666666666,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "l7oombn",
@@ -33,7 +35,8 @@
         "effects": "Dito lang ako nahiyang kasi walang hapdi. Before I use The Face Shop B1T1 cleanser pero mas nahiyang talaga ako kay Cetaphil. Nag-ooil pa rin naman face ko pero hindi dugyot tignan. Plus hindi na ako nagbbreakout.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7391304347826086
+        "match_confidence": 0.7391304347826086,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "l7x3l7o",
@@ -51,7 +54,8 @@
         "effects": "Tried this kasi nag dry yung skin ko. Ever since ginamit ko to, nabawasan din yung pimples ko and little bumps sa buong mukha ko. I also noticed na lumambot din yung balat ko sa mukha. Every morning ko lang to ginagamit kasi nag a-acne soap ako sa gabi",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7391304347826086
+        "match_confidence": 0.7391304347826086,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8s5d05",
@@ -67,7 +71,8 @@
         "effects": "Ever since I started incorporating Tretinoin into my routine, this has been the only cleanser that doesn’t irritate my face. Most cleanser would sting me now, but this doesn’t. Very gentle, and non-stripping/drying. One bottle would last me at least 1.5 months since kaunti lang naman ako gumamit ng cleanser. This was also the first thing I bought when I went to the US a few months ago. I’m glad that Amazon is now directly shipping to PH, because I will surely buy and stock up on this again.",
         "status": "HG (Holy Grail)",
         "availability": "Amazon, Lazada & Shopee (resellers)",
-        "match_confidence": 0.6557377049180327
+        "match_confidence": 0.6557377049180327,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8w51wa",
@@ -82,7 +87,8 @@
         "effects": "I've tried a handful of facial cleansers that were sort of effective but not as effective as this cleanser. Grabe pagkasensitive ng skin ko kaya masyadong matapang most ng cleansers kaya, even if they do clean my face, my skin still gets irritated. Some are gentle enough na di magwawala skin ko pero parang feeling niya na wala namang effect. Cetaphil's is gentle enough that it doesn't irritate my skin but still gets the job done.",
         "status": "HG (Holy Grail)",
         "availability": "Watsons/Deparment Stores/Online",
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8s97b2",
@@ -98,7 +104,8 @@
         "effects": "Skill feels hydrated and moisturized after use. It doesn’t cause tight or stinging sensation. It doesn’t cause breakouts and is mild enough for my sensitive skin.",
         "status": "HG (Holy Grail)",
         "availability": "Hyalure_dermtech on Shopee",
-        "match_confidence": 0.6666666666666666
+        "match_confidence": 0.6666666666666666,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8s94nv",
@@ -113,13 +120,17 @@
         "effects": "Due to my oily acne prone skin, I used to use super harsh cleansers like kojic acid, salicylic acid wash, etc. It worked when I was in college, now parang sensitive na ang skin ko so it needs a cleanser na walang active ingredients. So I switched over to cetaphil and it decreased all my pimples! Still a bit oily but it’s no problem. I double cleanse din and do my skincare.",
         "status": "HG (Holy Grail)",
         "availability": "Watsons or any grocery store",
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 7
   },
   "Cosrx Salicylic Acid Daily Gentle Cleanser": {
     "product_name": "Cosrx Salicylic Acid Daily Gentle Cleanser",
-    "comments_count": 6,
+    "product_type": "Cleanser",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "l7nxm4y",
@@ -134,7 +145,8 @@
         "effects": "Maganda sya for me. Got laid off and no work for 6 months so wala talagang budget for skincare. Textured skin, acne prone pa, sabayan pa ng stress so ayun ang dumi talaga ng mukha ko. Until I came across this product and has been using it for 1 week now and promising ang results; pimples nag dry na, dark spots starting to lighten.",
         "status": null,
         "availability": null,
-        "match_confidence": 0.7887323943661971
+        "match_confidence": 0.7887323943661971,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k97q4mn",
@@ -151,7 +163,8 @@
         "effects": "No itchiness, redness or any adverse reaction sa skin ko. Skin feels soft and clean talaga. Sa umaga ko ginagamit yung Good Morning Facial Cleanser and sa gabi yung Salicylic Acid. ☺️",
         "status": "WR (Will Repurchase)",
         "availability": "Piggies Shop sa orange app / Meron din sa Watsons Official Store ng orange app",
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8uqoeu",
@@ -168,7 +181,8 @@
         "effects": "My skin is already so sensitive and dry, but the Low pH and Salicylic Acid Cleansers doesn't make it worse. The Low ph cleanser does wonders in drying out pimples and cleaning the face without any stripping. Sometimes, kapag nakakalimutan ko mag moisturize, gigising ako kinabukasan w/o any dry, flaky, and redness on any parts of my face. I only use the Salicylic Acid cleanser 2 or 3 times a week. Low lang concentration niya ng Salicylic Acid, pero its really helpful in removing white heads around the nose, chin, and forehead (just make sure to rub it thoroughly).",
         "status": "HG (Holy Grail)",
         "availability": "Shopee, Tiktok Shop, Watsons (jusy make sure na sa official page kayo ng COSR bibili)",
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8vezrt",
@@ -183,7 +197,8 @@
         "effects": "Parang hindi nakaka wash ng face? But I guess ganun lang talaga yung effect since it’s advertised as a “gentle” cleanser. Second bottle ko na. I need cleansers with SA (salicylic acid) kasi these type of cleansers prevent huge pimples sa face ko. I went on a vacay so iniwan ko to and gosh nag break out ako. Before, COSRX Salicylic Acid Daily Gentle Cleanser (white and red variant) gamit ko but superrrr drying for me, so I switched to Klued.",
         "status": "WR (Will Repurchase (ALREADY DID))",
         "availability": "Official online stores (Shopee or Laz)",
-        "match_confidence": 0.7294117647058823
+        "match_confidence": 0.7294117647058823,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8s0h1h",
@@ -199,7 +214,8 @@
         "effects": "Since 2020 ko ito gamit and around this time, super dami kong pimples 🥲 A friend recommended this to me at nahiyang ako, pero siya daw hindi hiyang HAHA i still get pimples pero hindi siya kasing bad compared sa dati hahaha. And mostly mabilis mawala kasi hormonal or diet naman ang cause.",
         "status": "HG (Holy Grail)",
         "availability": "Lazada, Shopee, Watson’s",
-        "match_confidence": 0.7777777777777778
+        "match_confidence": 0.7777777777777778,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "k8y088m",
@@ -215,13 +231,17 @@
         "effects": "** I have the occasional hormonal acne flare ups and this cleanser shuts it down. It's also not drying.",
         "status": "HG (Holy Grail)",
         "availability": "** Skincare PH on Lazada",
-        "match_confidence": 0.6578947368421053
+        "match_confidence": 0.6578947368421053,
+        "product_type": "Cleanser"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 6
   },
   "COSRX Low pH Good Morning Gel Cleanser": {
     "product_name": "COSRX Low pH Good Morning Gel Cleanser",
-    "comments_count": 1,
+    "product_type": "Cleanser",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "k8uecrz",
@@ -237,13 +257,17 @@
         "effects": "COSRX’s gel cleanser has been a skincare staple for me since pre-pandemic times. There’s very little I can add into the array of rave reviews about it that already exist, but as always, it’s non-stripping, lathers nicely, and does everything a basic, no-frills AM cleanser should do. The Axis-Y quinoa cleanser has a thinner and more watery consistency than COSRX, so I use this in the PM after cleansing with a balm (I use Heimish’s btw!). It lathers just enough to get rid of any residual makeup, sunscreen, and/or cleansing balm. And when I get out of the shower at night, my face doesn’t feel uncomfortably tight. Just a note: Both of these cleansers smell clean (somewhat botanical?) but aren’t fragranced to high heaven, so they’re perfect for someone like me who also happens to dislike strong perfume-y scents in skincare.",
         "status": "HG (Holy Grail)",
         "availability": "Shopee/Lazada",
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 1
   },
   "Cerave Hydrating Cream-to-Foam Cleanser": {
     "product_name": "Cerave Hydrating Cream-to-Foam Cleanser",
-    "comments_count": 1,
+    "product_type": "Cleanser",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "k8s61og",
@@ -259,13 +283,17 @@
         "effects": null,
         "status": "WR (Will Repurchase)",
         "availability": "Shopee (Beautyteeps)",
-        "match_confidence": 0.676923076923077
+        "match_confidence": 0.676923076923077,
+        "product_type": "Cleanser"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 1
   },
   "Pyunkang Yul Acne Facial Cleanser": {
     "product_name": "Pyunkang Yul Acne Facial Cleanser",
-    "comments_count": 1,
+    "product_type": "Cleanser",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "k8s28tw",
@@ -281,13 +309,34 @@
         "effects": "Ito lang yung effective sakin na cleanser na hindi ako nagddry, I used to love oxecure's pH 5.5 cleanser but nag-breakout na ako simula nung nagreformulate sila so I switched to this. Effective for me! But of course I won't say na this solely cleared my acne, but it helps me control them and di siya dumadagdag sa problema ko. Matipid siya for me! I think it's slightly expensive for its size but super tipid for me and ilang months an bago maubos, I usually buy pag sale so sulit.",
         "status": "HG (Holy Grail)",
         "availability": "Drug stores, watsons, lazada, shopee",
-        "match_confidence": 0.6567164179104478
+        "match_confidence": 0.6567164179104478,
+        "product_type": "Cleanser"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 1
   },
   "Skin Aqua UV Super Moisture Gel Gold Sunscreen": {
     "product_name": "Skin Aqua UV Super Moisture Gel Gold Sunscreen",
-    "comments_count": 11,
+    "product_type": "Sunscreen",
+    "posts": [
+      {
+        "post_id": "1e9d1by",
+        "post_author": "AtTheUngodlyHour",
+        "post_score": 46,
+        "post_created_utc": 1721651266.0,
+        "post_title": "Kose Suncut UV Perfect Gel (2024 Reformulation) Review - Perfect for Oily Skin and Active Lifestyles! ",
+        "post_url": "https://reddit.com/r/beautytalkph/comments/1e9d1by/kose_suncut_uv_perfect_gel_2024_reformulation/",
+        "post_selftext": "Hi everyone!\n\nI wanted to share my thoughts on the Kose Suncut UV Perfect Gel (2024 reformulation). For some background, I have oily skin and use adapalene at night for acne. I’m diligent about my sunscreen use since 2015, as advised by my dermatologist, and I've tried numerous Western and Asian sunscreens over the years. Here’s my experience with the latest version of this sunscreen:\n\n\nWhat I Liked:\n\n1. True gel consistency: Just like the old version, this sunscreen has a true gel consistency that dries down with almost no greasy feeling. It dries down to a natural finish (not dewy, not matte).\n   \n2. Does not pill: One of the biggest issues I had with the previous version was that it would pill when I accidentally touch it while it dries. Also, the old formula pills when friction was applied. This new formulation has completely resolved that problem.\n\n3. Water resistance: As someone with an active lifestyle who sweats a lot, I always use a water resistant sunscreen when doing outdoor activities. When I tried this, I noticed that it stays on my face despite sweating and (lightly) wiping sweat a lot.\n\n4. Works well under makeup: I’ve tried this under my foundation, and it blends seamlessly. Unlike other water-resistant gel sunscreens like Skin Aqua Super Moisture Barrier UV Gel and Biore Aqua Rich Watery Essence, this one didn’t cause me to oil up throughout the day.\n\n5. Not drying or stinging: Even though it contains alcohol, it doesn’t feel drying or sting my skin. \n\n6. No white cast! \n\n7. No added fragrance: This has a bit of an alcohol smell but when it dries down, the scent fades.\n\n\nCons:\n\n1. Alcohol Ingredient: This may not be for those who are sensitive to alcohol. \n\n2. Not readily available in physical stores in the Philippines.",
+        "match_confidence": 0.75,
+        "skin_type": [
+          "Oily"
+        ],
+        "price_size": null,
+        "status": null,
+        "availability": "Physical stores in the philippines"
+      }
+    ],
     "megathread_comments": [
       {
         "comment_id": "j9nh55r",
@@ -302,7 +351,8 @@
         "effects": "Been a Bioré girl ever since but nagoioil up ako sa biore so tried this one out and I’m currently on my 3 bottle na. Its suitable for oily gals since it is easily absorbed by the skin. No sticky feeling as well",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8051948051948052
+        "match_confidence": 0.8051948051948052,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "jbdf3lw",
@@ -319,7 +369,8 @@
         "effects": "finally found a sunscreen that works on my super arteng skin!! Very lightweight, easy to spread and doesn’t sting my eyes. I usually get closed comedones and pimples when using sunscreen pero sa product na ‘to wala. Very hiyang talaga ako dito and ganda din ng lapat nya sa make up. Fresh buong araw. Di ako mukang dugyot while using this sunscreen.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.6588235294117647
+        "match_confidence": 0.6588235294117647,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "jpzvj9n",
@@ -335,7 +386,8 @@
         "effects": "Really wanted to like this one pero unfortunately nagka-comedones ako dito. It's very dewy/shiny on my skin even when it sets. Mabilis din mag-oil up skin ko pag gamit ko to kahit lagyan ko ng setting powder.",
         "status": "WNR (Will Not Repurchase)",
         "availability": null,
-        "match_confidence": 0.8051948051948052
+        "match_confidence": 0.8051948051948052,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "jbdfuym",
@@ -351,7 +403,8 @@
         "effects": "I alternate this with my Skin1004 Hyalu-Cica Water Fit Sun Serum. I use this on days my skin isn't feeling too dry or I'm not too lazy for moisturizer [it's not drying ah, I just really have dry skin most of the time since I use actives too kaya my skin requires the use of moisturizer]. Feels good on the skin, non-greasy, and no white cast! It's absorbed well on my skin + barely any drying time. The 110g lasts me soooo long despite using it every day [I reapply this when I'm at home since I'm barefaced lang naman]. No irritations whatsoever.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.6990291262135923
+        "match_confidence": 0.6990291262135923,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "j9oic0n",
@@ -367,7 +420,8 @@
         "effects": "This is similar to the Benton but without essential oil. I would say that this has a pretty different texture, parang kakaiba yung feel niya once you spread it, but the finish remains the same. I can't really say whether the Benton or the Beauty of Joseon is shinier, but both looks very reflective after applying but they do set into an acceptable finish. Same thoughts to Benton really, if you like one of them then you'll like the other. Also almost forgot to mention, both stings my fingers as I apply them though my face feels fine.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8260869565217391
+        "match_confidence": 0.8260869565217391,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "l9kkto9",
@@ -382,7 +436,8 @@
         "effects": "Not only that it’s sweat and water resistant, it’s also alcohol and fragrance free! I bought this as an alternative to my much more expensive sunscreen and let me tell you it did not disappoint! It also didn’t irritate my skin compared to other sunscreens (i also have sensitive skin) It’s also in a  lighter finish!",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.6823529411764706
+        "match_confidence": 0.6823529411764706,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "kvo3dk3",
@@ -398,7 +453,8 @@
         "effects": "** It is marketed for humid climates and is super effective on face and body given na I work on-site some days. Comes in a big bottle, moisturizing and leaves no white-cast. May subtle alcohol smell but fades easily. Big plus na it does not break me out. Also, may dewy finish but I usually powder my face din naman.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7865168539325843
+        "match_confidence": 0.7865168539325843,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "l7vzgj2",
@@ -413,7 +469,8 @@
         "effects": "This is hands down my favorite sunscreen of all time it blends easily and sinks into the skin fast, even though chemical sunscreen siya it doesnt sting my eyes im just so sad that the 2024 version didnt work for me ;( off to hunt a similar sunscreen ig",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8051948051948052
+        "match_confidence": 0.8051948051948052,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mt8kjf4",
@@ -429,7 +486,8 @@
         "effects": "I've been using this for two weeks now (mostly outdoors) and this has to be one of my favorite sunscreens, yet. I have tanned skin and this leaves absolutely no whitecast on me. Also really easy to re-apply because of how easily it melts into my skin and feels like a light moisturizer. I'm often outdoors and with combination/oily skin, this does leave a bit of a dewy shine. It doesn't look greasy though. I used this on a hike and as someone who sweats a lot, the waterproof rating did seem to hold its ground. It smells strongly of alcohol on first application, but the scent goes away minutes after. It didn't sting my eyes even on hot, sweaty days.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8051948051948052
+        "match_confidence": 0.8051948051948052,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvkpdc",
@@ -444,7 +502,8 @@
         "effects": "it has thick & creamy consistency but feels lightweight once applied. Very moisturizing din siya at the same time kaya I don’t need to use a separate moisturizer na. Although it makes my face very shiny but I just dab some powder to remove shine. It doesn’t pill as well kaya winner siya for me.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8051948051948052
+        "match_confidence": 0.8051948051948052,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvzqsn",
@@ -460,13 +519,17 @@
         "effects": "This is a hybrid sunscreen (has both chemical and physical sun filters). I use Skinoren Azelaic Acid in the morning and this sunscreen doesn't aggravate the stinging sensation. If you use azelaic acid, usually physical sunscreen is recommended, but it has white cast. Chemical sunscreens doesn't, but it always stings. So this sunscreen is perfect. It has a runny milky consistency. It's smooth and very easy to blend. It dries down with a satin finish, perfect for a makeup base or on it's own.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7045454545454546
+        "match_confidence": 0.7045454545454546,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 1,
+    "comments_count": 11
   },
   "Belo Dewy Essence Sunscreen": {
     "product_name": "Belo Dewy Essence Sunscreen",
-    "comments_count": 6,
+    "product_type": "Sunscreen",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "j9o63mo",
@@ -483,7 +546,8 @@
         "effects": "I love this stuff. This is the most lightweight sunscreen I've ever used, though I prefer emollient sunscreens so take this with a grain of salt. For reference, the original SunExpert Face with SPF40 was lightweight for me, and Dewy Essence feels even more comfortable than that. Some people find that pretty heavy. I can layer this and use three fingers' worth of product without a problem, and it doesn't break me out. I don't really find this dewy or shiny. I tend to get oily throughout the day but this doesn't add to my usual amount of oiliness. This and the OG are great makeup primers, too.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7397260273972602
+        "match_confidence": 0.7397260273972602,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "j9nonw3",
@@ -499,7 +563,8 @@
         "effects": "** it's a decent combo sunscreen, perfect for people starting skincare and on a budget. it has a noticeable white cast, a strong vanilla fragrance, and it doesn't sting the eyes. overall, i think it's comfortable to use, easily accessible, affordable, and perfect for lazy morning skincare routines XD personally, i think there are better sunscreen options out there for even cheaper with no fragrance. it weirdly separates if left alone for awhile so make sure to shake properly. it does the job well but i'm not blown away by it.",
         "status": "WNR (Will Not Repurchase)",
         "availability": null,
-        "match_confidence": 0.7397260273972602
+        "match_confidence": 0.7397260273972602,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "kxvubu7",
@@ -512,7 +577,8 @@
         "effects": null,
         "status": null,
         "availability": null,
-        "match_confidence": 0.6538461538461539
+        "match_confidence": 0.6538461538461539,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "lm2f5yy",
@@ -525,7 +591,8 @@
         "effects": "** -Too dark on me -Takes a long time to absorb",
         "status": "WNR (Will Not Repurchase)",
         "availability": null,
-        "match_confidence": 0.6923076923076923
+        "match_confidence": 0.6923076923076923,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "lscdph9",
@@ -538,7 +605,8 @@
         "effects": null,
         "status": null,
         "availability": null,
-        "match_confidence": 0.6666666666666666
+        "match_confidence": 0.6666666666666666,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrzftek",
@@ -554,13 +622,17 @@
         "effects": "Blends super easy and has a matte finish unlike other sunscreens (lalo na’t mataas ang % ng mga UV filters niya), mas okay pa nga to compared to other chemical sunscreen na ang hirap iblend plus ang oily sa face",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7037037037037037
+        "match_confidence": 0.7037037037037037,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 6
   },
   "Canmake UV Mermaid Sun Gel Clear Sunscreen": {
     "product_name": "Canmake UV Mermaid Sun Gel Clear Sunscreen",
-    "comments_count": 4,
+    "product_type": "Sunscreen",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "jbf941x",
@@ -576,7 +648,8 @@
         "effects": "** HG! No issues with it and I’m too lazy to experiment with other brands at this point haha",
         "status": null,
         "availability": null,
-        "match_confidence": 0.8461538461538461
+        "match_confidence": 0.8461538461538461,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "jertl6r",
@@ -593,7 +666,8 @@
         "effects": "** This is nice! It may be greasy upon initial application but dries down to a more healthy dewy look. Did not break me out, no stinging or any irritation. Maganda gamitin lalo na for cold weather. Yiu can really why it's recommended by many people. Cons lang is that it's not sweat-resistant, which is what I need for the summer season 🥲 My face sweats like crazy and this will immediately melt once I step out of the house.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7466666666666667
+        "match_confidence": 0.7466666666666667,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "j9nhg3s",
@@ -608,7 +682,8 @@
         "effects": "For me, this sunscreen is a hybrid of sunscreen and primer since it gives you a nice glow when you use it. Its also good for oily skin kasi no sticky feeling din.",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.6666666666666666
+        "match_confidence": 0.6666666666666666,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "lm2fcj2",
@@ -621,13 +696,17 @@
         "effects": "** -Pearly-shimmer -Can be too dewy -No whitecast but may take more time to absorb and disappear -Feels like a moisturizer -Doesn’t sting my eyes -Have not tried under makeup",
         "status": "WNR (Will Not Repurchase)",
         "availability": null,
-        "match_confidence": 0.6818181818181818
+        "match_confidence": 0.6818181818181818,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 4
   },
   "Biore UV Aqua Rich Watery Essence Sunscreen": {
     "product_name": "Biore UV Aqua Rich Watery Essence Sunscreen",
-    "comments_count": 10,
+    "product_type": "Sunscreen",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "j9nix6m",
@@ -642,7 +721,8 @@
         "effects": "Prescribed by my derma kasi I had Acne Vulgaris. Okay naman sya but pag lumalabas ako and nakamask, pansin ko lang is parang shiny shimmery un face ko lol. tho feel ko okay naman un sun protection nya di ko lang bet un mejo shiny sya hehe. I would like to try other sunscreens but eto un nireseta ng derma, and i‘m scared na magbreakout nanaman",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.6666666666666666
+        "match_confidence": 0.6666666666666666,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "j9ni6ni",
@@ -657,7 +737,8 @@
         "effects": "This is the first Jap sunscreen I feel inlove with. Super suitable for oily skin pips and even tho it has alcohol content, it doesnt bother me that much. However, nagooil up ako dito sometimes so I have to set it with powder. Eto rin gamit na sunscreen ng derma ko so def a must try sunscreen",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.8421052631578947
+        "match_confidence": 0.8421052631578947,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "j9nidvj",
@@ -672,7 +753,8 @@
         "effects": "Tried this once nung nawalan ako ng stock nung Watery Essence. I feel like this is more suitable for dry - combi skin and not for the oily skin. Medyo may whitecast din sya when you first apply it but pag nagset naman, nawawala na. Less fragrance din ito compared sa watery essence.",
         "status": "WNR (Will Not Repurchase)",
         "availability": null,
-        "match_confidence": 0.7222222222222222
+        "match_confidence": 0.7222222222222222,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "kvpv6v2",
@@ -688,7 +770,8 @@
         "effects": "Light, odorless, leaves a bit of a whitecast but manageable as long as you let it set for a while. This was recommended by my dermatologist after I told her abt the whiteheads I got from Biore's UV Aqua Rich Sunscreen lol. My only issue is that it's not available here in the PH so ang mahal nya! But si far I think it's worth it naman, not HG status yet because I want to try Anessa's and Beauty of Joson's.",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvqqdn",
@@ -703,7 +786,8 @@
         "effects": "** Thick application. Not good for outdoor use, sobrang hulas and lagkit sa feeling. Nakakabreak-out. Only used once.",
         "status": "WNR (Will Not Repurchase)",
         "availability": null,
-        "match_confidence": 0.7894736842105263
+        "match_confidence": 0.7894736842105263,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvm962",
@@ -719,7 +803,8 @@
         "effects": "Gel type siya with a creamy white consistency. May tone-up effect siya na minsan hindi ko bet—lalo na kapag nagmamadali akong mag-blend, nagiging reddish or parang grayish ’yung finish. Pero once ma-absorb na ng skin, nawawala naman. Napansin ko na depende talaga sa pag-aapply—nabasa ko rin na best daw if dab dab lang gamit fingers then gently spread, at effective naman ’yun for me. As much as possible, nag-aapply ako sa harap ng electric fan or kapag malamig ’yung paligid kasi mas maganda ’yung lapat. Naamoy ko talaga ’yung alcohol, which makes sense kasi may alcohol content siya. May mga nagsabi na nati-tear up or may sting sa mata, pero personally hindi ko naman na-experience ’yun. Dahil may alcohol, mabilis din siyang mag-set sa skin kaya dapat i-blend agad after apply. So far, okay naman siya. No breakouts and bumps. Binili ko lang din talaga ito para mag-try ng ibang Japanese sunscreens since ubos na ’yung Omi Menturm ko. Binili ko pala siya nitong March 20. mag 2 months na rin halos and hindi pa siya ubos.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.691358024691358
+        "match_confidence": 0.691358024691358,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrwfk7j",
@@ -735,7 +820,8 @@
         "effects": "Favorite for beach and outdoor activities Heavy and slightly oily texture but deeply hydrating Spreads easily, protects well from harsh sun Slightly greasy feel, but worth it for strong protection",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7727272727272727
+        "match_confidence": 0.7727272727272727,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvwznj",
@@ -750,7 +836,8 @@
         "effects": "** Too watery for my liking but still works great! Though for this I still need to apply primer before everything else so I just use this when I’m going for a barefaced look.",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.8421052631578947
+        "match_confidence": 0.8421052631578947,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrw8sfk",
@@ -766,7 +853,8 @@
         "effects": "No white cast, I use it as my make up base na rin hihi. Of all the sunscreens that I have tried so far ito lang talaga yung hiyang ako knowing din na super sensitive ng face ko sa new products na naiintroduce. The dry patches that I have also disappears",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8421052631578947
+        "match_confidence": 0.8421052631578947,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrw31hh",
@@ -779,13 +867,17 @@
         "effects": null,
         "status": null,
         "availability": null,
-        "match_confidence": 0.8433734939759037
+        "match_confidence": 0.8433734939759037,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 10
   },
   "Nivea Derma Skin Clear Deep Pore Cleanser": {
     "product_name": "Nivea Derma Skin Clear Deep Pore Cleanser",
-    "comments_count": 2,
+    "product_type": "Cleanser",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "j9nztrk",
@@ -801,7 +893,8 @@
         "effects": "** Isntree. No whitecast! Dewy finish. Didnt get breakout or what. Super moisturizing! Kaya I skip na my usual moisturizer in the morning. A little goes a long way pero generous ako mag apply ng sunscreen lol. Downside lang pala nito hindi water resistant. Biore. I have Biore for back up whenever I go swimming or do water activities. But since di naman ako nagbbeach lately, Isntree talaga gamit ko indoor and outdoor. Issue ko lang sa Biore, sobrang oily ko after huhu kaya pang water ko lang talaga sya ginagamit. May strong scent din pala to upon application.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       },
       {
         "comment_id": "lbkuvqw",
@@ -816,13 +909,17 @@
         "effects": "magaan sa mukha, and effective siya for me**",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Cleanser"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 2
   },
   "Anessa Perfect UV Sunscreen Skin Care Milk": {
     "product_name": "Anessa Perfect UV Sunscreen Skin Care Milk",
-    "comments_count": 6,
+    "product_type": "Sunscreen",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "j9v20vj",
@@ -837,7 +934,8 @@
         "effects": "Not worth it in my opinion. I got the bundle during a payday sale so it was much cheaper but I still think not worth it for me just because I ended up just giving it away. It ruined my makeup after less than 2 hours. Hulas na hulas talaga. It also made my pores feel congested for some reason. I don't think it's for me but if you really want to try it out, get it on a sale. I got my oil cut powder pact + sun base bundle for only ₱231 so I don't think completely nalugi ako.",
         "status": null,
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "kvnzn83",
@@ -850,7 +948,8 @@
         "effects": null,
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7906976744186046
+        "match_confidence": 0.7906976744186046,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "kvw0dwa",
@@ -865,7 +964,8 @@
         "effects": "I’ve been using this for years and it’s perfect for oily skin. No white cast at all and one can easily reapply it a few times a day, although consistency is a bit runny. It doesn’t clog my pores and I use this everyday. I would highly recommend.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "ms0nmh9",
@@ -880,7 +980,8 @@
         "effects": "- Really gives you that radiant glow after application due to its tone-up effect - Does not leave any white cast but you must apply it properly - Super light-weight! - Noticed that I sweat and oil less once it is applied - Did not experience any breakouts",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.7524752475247525
+        "match_confidence": 0.7524752475247525,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrw4jbz",
@@ -895,7 +996,8 @@
         "effects": "doesnt make my face more oily. found a lot of sunscreen tests and it always had the best result",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvu668",
@@ -912,13 +1014,17 @@
         "effects": null,
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8351648351648352
+        "match_confidence": 0.8351648351648352,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 6
   },
   "Beauty of Joseon Relief Sun Sunscreen: Rice + Probiotics": {
     "product_name": "Beauty of Joseon Relief Sun Sunscreen: Rice + Probiotics",
-    "comments_count": 6,
+    "product_type": "Sunscreen",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "jabsqec",
@@ -936,7 +1042,8 @@
         "effects": "** There was a slight sting after my first initial application, pero after ilang use ulit, wala na. It did not break me out which was great and there was no further irritation. However, it sits on my skin after application and leaves a shine on it. It's a combination of dewy/greasy skin kung susumahin ko hahaha. I think it's a good combo for sunscreen and moisturizer. Yun nga lang, it makes me oily after ilang hours kahit nasa bahay lang ako. I don't think this would be a great sunscreen for me if I'm going out/commuting dahil sure na mas magiging oily yung face ko dito after sweating.",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.8080808080808081
+        "match_confidence": 0.8080808080808081,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "ja1yhuw",
@@ -951,7 +1058,8 @@
         "effects": "Dahil I prefer this over BOJ. I know, I know, hindi siya \"sunscreen\" mas skin tint/moisturizer siya accdg sa label pero I use this as my daily base instead of foundation. I prefer this over BOJ kase magaan sya sa skin pero it brightens my complexion. Saks ang effect at size for the price pero I really wish it contains more product. Naka-ilang REBUY na ako nito pero I am willing to buy another product that delivers the same effects with more product in the container. Now that I think about it, parang mas sustainable choice if madaling maubos kase if sawa ka na agad sa product, before you know it, you're already halfway through the bottle lol. Maunti siya talaga. EDIT: ISSY AND CO ay madali ring magtransfer sa face mask eh I dont put a powder on top of it pa man din. Kaya looking for alternative rin ako lol",
         "status": null,
         "availability": null,
-        "match_confidence": 0.8163265306122449
+        "match_confidence": 0.8163265306122449,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "j9o6ytf",
@@ -964,7 +1072,8 @@
         "effects": null,
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.6746987951807228
+        "match_confidence": 0.6746987951807228,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "kvplyj3",
@@ -980,7 +1089,8 @@
         "effects": "It’s lightweight, no white cast, hydrating and I like how it’s not sticky or drying on my face and it gives you that glow.",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrvxjyl",
@@ -995,7 +1105,8 @@
         "effects": "- 🤩Read & seen many good reviews, so I tried it myself. I do many outdoor movements bcs of work, and I think BOJ does its job naman as a sunscreen. - Feels light on skin, easily blends & does not leave any whitecast or icky feeling, esp when face becomes oily or sweaty!! - Some say you can skip your moisturizer too bcs BOJ is very hydrating na rin—I agree! This is the ONLY thing I put on my face every morning after cleanser. No bad effects on my skin naman after having used it for a year (or more); face feels hydrated & protected from the sun! - One 50ml tube lasted for 3 to 4 months for me, so i can say sulit na rin for it’s price",
         "status": "HG (Holy Grail)",
         "availability": null,
-        "match_confidence": 0.8
+        "match_confidence": 0.8,
+        "product_type": "Sunscreen"
       },
       {
         "comment_id": "mrw90sl",
@@ -1010,13 +1121,17 @@
         "effects": "** Lightweight and easily blendable with no white cast. ✨ Leaves a slightly dewy finish (though I personally prefer powdery finish like Biore Perfect Bright Face Milk). Helped calm my forehead, which was irritated by malassezia. Some reviews mention pilling, but I didn’t experience any.",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.7526881720430108
+        "match_confidence": 0.7526881720430108,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 6
   },
   "Missha Safe Block Waterproof Sun Milk Sunscreen": {
     "product_name": "Missha Safe Block Waterproof Sun Milk Sunscreen",
-    "comments_count": 1,
+    "product_type": "Sunscreen",
+    "posts": [],
     "megathread_comments": [
       {
         "comment_id": "j9ndwub",
@@ -1031,8 +1146,34 @@
         "effects": "Great for everyday use, I work outdoors sometimes + have oily area on my skin so it's sweatproof and humidity proof; no whitecast. On my 3rd bottle. Slight issue that it's been making my skin a little oily which it didn't before, so while I'm looking for an alternative, I'll be sticking to this.",
         "status": "WR (Will Repurchase)",
         "availability": null,
-        "match_confidence": 0.6829268292682927
+        "match_confidence": 0.6829268292682927,
+        "product_type": "Sunscreen"
       }
-    ]
+    ],
+    "posts_count": 0,
+    "comments_count": 1
+  },
+  "Luxe Organix's Aqua Lock hydrogel cleanser": {
+    "product_name": "Luxe Organix's Aqua Lock hydrogel cleanser",
+    "product_type": "Cleanser",
+    "posts": [
+      {
+        "post_id": "1kcbilb",
+        "post_author": "skincare_chemist19",
+        "post_score": 2508,
+        "post_created_utc": 1746113246.0,
+        "post_title": "Chemist's Review: Luxe Organix Retinol + Gluta Youthful Radiance Whitening Serum Lotion",
+        "post_url": "https://reddit.com/r/beautytalkph/comments/1kcbilb/chemists_review_luxe_organix_retinol_gluta/",
+        "post_selftext": "Naisipan kong dumaan sa Watsons ngayong araw para bumili ng lotion, dahil paubos na yung ginagamit ko. Nakita ko tong lotion na 'to ng Luxe Organix na naka B1T1 for Php 405, kaya naisipan kong subukan. 2 variant yung binili ko, itong Retinol + Gluta, tsaka yung Niacinamide + Arbutin. \n\nTLDR:\n\nMay microfoaming, malakas ang fragrance, heavier skin feel kumpara sa ibang serum lotions sa Market, mali-mali ang IL, mislabeled dahil imbes na retinol, Retinyl Palmitate ang laman base sa IL. \n\nUnahin muna nating tingnan ang packaging. Sa unang tingin, di nalalayo material sa packaging ng mga serum lotion ng Vaseline. Tho, yung sa Vaseline, rounded yung tabas ng seal ng tube sa both sides, samantalang itong sa LO ay pointed. \n\nSa itsura naman mismo ng laman, off-white na medyo madilaw yung kulay ng lotion. Medyo clumpy din yung itsura pagkalabas nito sa tube, at madali ding mag-break yung emulsion upon skin contact. Malakas yung fragrance nya na dominated ng floral notes. Unang naisip ko nga nung naamoy ko e amoy poon, dahil sa sobrang floral. \n\nMedyo matagal ipahid sa balat, kumpara sa ibang serum lotion na nasubukan ko na. Naka-observe din ako ng microfoaming during application nitong lotion. Ang microfoaming ito yung nagkakaroon ng puti-puting streaks sa balat habang pinapahid ang isang product, kadalasan mga emulsion gaya ng lotion at creams. Ang microfoaming ay dulot ng pagkaka-trap ng air sa product habang ipinapahid sa balat. Kung ikukumpara ko ito sa ibang serum lotion na nagamit ko na (Vaseline Gluta-Hya Serum Burst Lotion, Smoochkins Nia-Arbutin Nano White Serum Lotion), ito yung pinaka heavy ang skin feel. Hindi ko masyadong na-feel yung pagka serum lotion. And lastly naka-experience din ako ng pamumula at pantal sa braso ko after ko gamitin itong lotion na ito. \n\nTumungo naman tayo sa ingredient list. \n\nWater (Aqua), Glycerin, Glyceryl Stearate, Cetyl Stearyl Alcohol, Cetyl Alcohol, Isopropyl Myristate, Fragrance, C15-19 Alkane, Stearyl Alcohol, Phenoxyethanol, Triethanolamine, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Disodium EDTA, Glutathione, Polysorbate 20, Dimethyl Isosorbide, Plukenetia Volubilis Seed Oil, Olea Europaea (Olive) Fruit Oil, Ceramide NP, Mannitol, Pentylene Glycol, CI19140, Phosphatidylcholine, Retinyl Palmitate, Cholesterol, Xanthan Gum, Sodium Chloride, Polyglyceryl-10,  Citric Acid, Tocopherol, Sodium Hyaluronate, Sodium Acetylated Hyaluronate, Sodium Hyaluronate Crosspolymer, Potassium Sorbate, Sodium Benzoate, Hydrolyzed Sodium Hyaluronate Acetyl Tetrapeptide-11, Acetyl Tetrapeptide-9, Ethylhexylglycerin\n\nHindi na talaga nawala ang mga errors sa IL ng mga local products. Di yata talaga uso ipa-check man lang sa regulatory personnel ang IL na ilalagay sa final layout ng packaging bago ang ipa-mass printing. Para sa product na ito, hindi Cetyl Stearyl Alcohol ang tamang INCI name, kung hindi Cetearyl Alcohol. Next, Polyglyceryl-10, what? Incomplete yung ingredient name. Ang daming Polyglyceryl-10 esters na nag eexist, wag nyo na kami paghulain. (Side Note: Ang Polyglyceryl-10 esters ay kadalasang ginagamit as non-ionic emulsifier sa cosmetics.). \n\nPangalawa kong napansin, CI19140. Ang CI19140 ay isang dye na kilala din bilang Tartrazine Yellow or FD&C Yellow #5. Ito yung nagbigay ng medyo madilaw na kulay sa lotion na ito. Konektado ito sa kasunod kong punto. \n\nIkatlo, bakit Retinyl Palmitate ang nakalista dito sa IL? Kaya nyo ba nilagyan ng Yellow #5 ang lotion na ito para magmukhang may retinol, kasi nakakapagdulot ng paninilaw sa mga product ang retinol kapag ihinalo ito? Ngayon, ano ba ang problema kung retinyl palmitate ang nakalagay, imbes na retinol? Ito kasi yun: maliban sa obvious na mislabelling sa product na ito, mas mababa ang potency ng retinyl palmitate kaysa sa retinol. Sa buong retinoid family, ang mga retinyl esters kagaya ng retinyl palmitate ang may pinakamababang potency, dahil kailangan pa nito ng isang extra conversion step (retinyl palmitate -> retinol). Tandaan, ang mga retinoids, kailangang ma-convert into retinoic acid para ma-activate ang retinoic acid receptors natin sa balat at makuha ang benefits. \n\nRetinyl esters -> Retinol -> Retinaldehyde -> Retinoic Acid\n\nKada conversion step, bumababa ang potency ng isang retinoid, kaya sa kaso ng retinyl palmitate, na isang retinyl ester, eto ang may pinakamababang potency. \n\nMay peptides din pala itong lotion na ito: Acetyl Tetrapeptide-9 at Acetyl Tetrapeptide-11.\n\nAng acetyl tetrapeptide-9 ay isang signaling peptide na nagbibigay ng message sa fibroblasts sa ating dermis na magproduce ng collagen (specifically Collagen Type 1) at proteoglycans, na mahalaga para mapanatili ang structure at mapanatiling tight (hindi sagging) ang balat natin.  Nakakatulong din itong mabawasan ang appearance ng fine lines sa mukha, dahil na rin sa stimulation ng collagen at proteoglycan production. \n\nKung ang dermis ang target ng acetyl tetrapeptide-9, ang epidermis naman ang target ng acetyl tetrapeptide-11. Kagaya ng acetyl tetrapeptide-9, signaling peptide din ito na nagbibigay ng mensahe sa epidermis na mag-synthesize o magproduce ng Syndecan-1 at Collagen XVII. Kapag mataas ang dalawang ito sa balat, nag-iimprove ang elasticity ng balat. \n\nKaramihan ng mga nabanggit na benepisyo ng dalawang peptides na ito ay base pa lamang sa mga in-vitro studies na naisagawa na. Wala pang gaanong in-vivo clinical studies na lumabas kaya medyo skeptical pa din ako sa mga peptides na ito. \n\nTumungo naman tayo lastly sa product claims. \n\n* Retinol + Gluta\n\n* Whitening Serum Lotion\n\n* Lightening\n\n* Firming\n\n* Hydrating\n\n* 24 hr Supple Smooth\n\n* 3X Peptide Youth Repair + Hyaluronic Bright + Ceramide Glow\n\nUnang claim pa lang, sablay na. Wala namang retinol tong lotion na 'to. Pinaglololoko ako nitong LO e. \n\nSa claim na lightening at whitening, medyo duda ako. Mukhang glutathione lang ang pwedeng masabi ng brand na ito na skin lightening ingredient. Pero duda ako sa efficacy ng glutathione na makapagpa lighten ng skin topically. Maraming limitations yung mga published studies tungkol sa efficacy ng topically applied gluta, gaya ng mababang bilang ng participants sa studies at sobrang iksi na study period. \n\nSa claim na firming, mukhang inilagay ito gawa nung mga peptides. Sa hydrating claim, meron namang hydrating ingredients (glycerin, hyaluronic acid derivatives, olive oil, Plukenetia Volubilis oil, tsaka Ceramide NP). Same din dun sa mga sumunod na claims, dahil sa presence ng mga nabanggit na ingredients. \n\n\nFinal words:\n\nHindi ako masaya sa nabili kong lotion na 'to. Hindi kasing lightweight at fast absorbing nung iba kong nasubukan na serum lotions. Amoy poon yung fragrance. May microfoaming during application. Nagkapantal ako sa braso. Mali-mali ang IL. Pero yung pinaka disappointing sa lotion na 'to e yung claim na may retinol daw, pero retinyl palmitate lang ang nasa ingredient list. May paglalagay pa ng yellow dye para magmukhang may retinol. Napakalaking red flag para sa akin ang pagmi-mislabel ng product.\n\nAyun lang. Salamat sa pagbabasa. At laging maging mapanuri sa mga binibili at balak nating gamitin na products.",
+        "match_confidence": 0.75,
+        "skin_type": [],
+        "price_size": "Php 405,",
+        "status": null,
+        "availability": "Watsons"
+      }
+    ],
+    "megathread_comments": [],
+    "posts_count": 1,
+    "comments_count": 0
   }
 }
